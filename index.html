@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Age Calculator | Built by Sehansa Rithmini Bomulla | CodeAlpha Internship 2026 -->
+ 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Age Calculator | CodeAlpha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+
+  <main class="container">
+    <header>
+      <div class="badge">CodeAlpha Internship</div>
+      <h1>Age <span class="accent">Calculator</span></h1>
+      <p class="subtitle">Discover your exact age — down to the day</p>
+    </header>
+
+    <div class="card">
+      <label class="field-label">Your Date of Birth</label>
+      <div class="input-row">
+        <div class="input-group">
+          <input type="number" id="day" placeholder="DD" min="1" max="31" maxlength="2"/>
+          <span class="input-label">Day</span>
+        </div>
+        <div class="input-group">
+          <input type="number" id="month" placeholder="MM" min="1" max="12" maxlength="2"/>
+          <span class="input-label">Month</span>
+        </div>
+        <div class="input-group">
+          <input type="number" id="year" placeholder="YYYY" min="1900" max="2025" maxlength="4"/>
+          <span class="input-label">Year</span>
+        </div>
+      </div>
+
+      <div id="error-msg" class="error-msg" aria-live="polite"></div>
+
+      <button id="calculate-btn" onclick="calculateAge()">
+        <span>Calculate Age</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <div id="result" class="result hidden">
+      <div class="result-title">You are exactly</div>
+      <div class="result-grid">
+        <div class="result-card" id="res-years">
+          <div class="result-num" id="years-val">0</div>
+          <div class="result-unit">Years</div>
+        </div>
+        <div class="result-card" id="res-months">
+          <div class="result-num" id="months-val">0</div>
+          <div class="result-unit">Months</div>
+        </div>
+        <div class="result-card" id="res-days">
+          <div class="result-num" id="days-val">0</div>
+          <div class="result-unit">Days</div>
+        </div>
+      </div>
+      <div class="extra-info">
+        <div class="info-item">
+          <span class="info-icon">🎂</span>
+          <span id="next-birthday">Next birthday in — days</span>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📅</span>
+          <span id="day-of-week">Born on a —</span>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">⏳</span>
+          <span id="total-days">Total days lived: —</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
